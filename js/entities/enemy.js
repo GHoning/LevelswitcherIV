@@ -72,6 +72,9 @@ game.EnemyEntity = me.Entity.extend({
             // which mean at top position for this one
             if (this.alive && (response.overlapV.y > 0) && response.a.body.falling) {
                 this.renderable.flicker(750);
+				game.data.score += 25;
+				me.game.world.removeChild(this);
+				
             }
             return false;
         }
